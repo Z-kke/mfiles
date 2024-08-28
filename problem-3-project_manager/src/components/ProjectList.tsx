@@ -25,9 +25,28 @@ const ProjectList: React.FC = () => {
                   ? "lightgreen"
                   : "lightgray"
             }`,
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-between",
+            alignItems: "center",
+            height: "100px",
+            padding: "16px",
           }}
         >
-          <ListItemText primary={project.name} secondary={project.state} />
+          <ListItemText
+            primary={project.name}
+            secondary={project.state}
+            primaryTypographyProps={{
+              fontWeight: "bold",
+              textAlign: "center",
+              alignSelf: "flex-start",
+            }}
+            secondaryTypographyProps={{
+              textAlign: "center",
+              alignSelf: "flex-end",
+              marginTop: "auto",
+            }}
+          />
         </ListItem>
       ))}
     </List>
