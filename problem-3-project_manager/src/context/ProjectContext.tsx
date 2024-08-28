@@ -17,3 +17,11 @@ const initialData: Project[] = [
 ];
 
 const ProjectContext = createContext<ProjectContextType | undefined>(undefined);
+
+export const useProjects = () => {
+  const context = useContext(ProjectContext);
+  if (!context) {
+    throw new Error("useProjects must be used within a ProjectProvider");
+  }
+  return context;
+};
