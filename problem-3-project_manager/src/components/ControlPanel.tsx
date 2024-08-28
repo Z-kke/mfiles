@@ -9,22 +9,28 @@ const ControlPanel: React.FC = () => {
   const handleFinish = () => updateProjectState("Finished");
 
   return (
-    <Stack direction="row">
+    <Stack
+      direction="column"
+      justifyContent="center"
+      alignItems="center"
+      spacing={2}
+      sx={{ height: "100%" }}
+    >
       <Button
-        variant="contained"
-        color="primary"
+        variant="outlined"
         onClick={handleLaunch}
         disabled={selectedProjects.length === 0}
+        sx={{ width: "200px", height: "60px" }}
       >
-        Launch
+        Launch project
       </Button>
       <Button
-        variant="contained"
-        color="secondary"
+        variant="outlined"
         onClick={handleFinish}
         disabled={selectedProjects.length === 0}
+        sx={{ width: "200px", height: "60px" }}
       >
-        Finish
+        Finish project
       </Button>
     </Stack>
   );
