@@ -25,3 +25,34 @@ export const useProjects = () => {
   }
   return context;
 };
+
+export const ProjectProvider: React.FC<{ children: React.ReactNode }> = ({
+  children,
+}) => {
+  const [projects, setProjects] = useState<Project[]>(initialData);
+  const [selectedProjects, setSelectedProjects] = useState<number[]>([]);
+
+  const toggleProjectSelection = (id: number) => {
+    console.log("toggledproject");
+  };
+
+  const clearSelection = () => setSelectedProjects([]);
+
+  const updateProjectState = (newState: ProjectState) => {
+    console.log("updateProjectState");
+  };
+
+  return (
+    <ProjectContext.Provider
+      value={{
+        projects,
+        selectedProjects,
+        toggleProjectSelection,
+        clearSelection,
+        updateProjectState,
+      }}
+    >
+      {children}
+    </ProjectContext.Provider>
+  );
+};
