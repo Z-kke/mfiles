@@ -1,4 +1,4 @@
-function suggestionElementPreperation(
+function suggestionElementPreparation(
   suggestionElemClass,
   suggestionClickEvent,
 ) {
