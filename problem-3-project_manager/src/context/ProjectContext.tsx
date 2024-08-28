@@ -33,13 +33,36 @@ export const ProjectProvider: React.FC<{ children: React.ReactNode }> = ({
   const [selectedProjects, setSelectedProjects] = useState<number[]>([]);
 
   const toggleProjectSelection = (id: number) => {
-    console.log("toggledproject");
+    const project = projects.find((p) => p.id === id);
+
+    if (project?.state === "Finished") return;
+
+    const firstSelectedProject = projects.find(
+      (p) => p.id === selectedProjects[0],
+    );
+    const isSelectable =
+      !firstSelectedProject || firstSelectedProject.state === project?.state;
+
+    if (!isSelectable) return;
+
+    setSelectedProjects((prevSelected) =>
+      prevSelected.includes(id)
+        ? prevSelected.filter((selectedId) => selectedId !== id)
+        : [...prevSelected, id],
+    );
   };
 
   const clearSelection = () => setSelectedProjects([]);
 
   const updateProjectState = (newState: ProjectState) => {
-    console.log("updateProjectState");
+    setProjects((prevProjects) =>
+      prevProjects.map((project) =>
+        selectedProjects.includes(project.id)
+          ? { ...project, state: newState }
+          : project,
+      ),
+    );
+    clearSelection();
   };
 
   return (
