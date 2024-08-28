@@ -6,6 +6,8 @@ function suggestionElementPreperation(
   suggestionElem.onclick = suggestionClickEvent;
 }
 
-/* Example how this function is called:
-suggestionElementPreparation( "mf-web-suggestionicon-text-mobile",
-"webURLPreparation( true, false )" ); */
+// Example how this function is called:
+suggestionElementPreparation(
+  "mf-web-suggestionicon-text-mobile",
+  "webURLPreparation( true, false )",
+);
