@@ -27,11 +27,6 @@ function suggestionElementPreparation(
   }
 }
 
-// Example function to be called on click
-function webURLPreparation(arg1, arg2) {
-  console.log("webURLPreparation called with arguments:", arg1, arg2);
-}
-
 // Example how this function is called:
 suggestionElementPreparation(
   "mf-web-suggestionicon-text-mobile",
