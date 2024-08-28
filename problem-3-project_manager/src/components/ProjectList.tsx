@@ -18,12 +18,12 @@ const ProjectList: React.FC = () => {
               ? "lightblue"
               : "white",
             color: selectedProjects.includes(project.id) ? "white" : "black",
-            borderRight: `35px solid ${
+            borderRight: `25px solid ${
               project.state === "Not Started"
-                ? "yellow"
+                ? "lightyellow"
                 : project.state === "Launched"
-                  ? "green"
-                  : "gray"
+                  ? "lightgreen"
+                  : "lightgray"
             }`,
           }}
         >
