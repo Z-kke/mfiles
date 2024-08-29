@@ -1,5 +1,12 @@
 import React from "react";
-import { List, ListItem, ListItemText, Paper } from "@mui/material";
+import {
+  List,
+  ListItem,
+  ListItemText,
+  Paper,
+  Typography,
+  Box,
+} from "@mui/material";
 import { useProjects } from "../context/ProjectContext";
 
 const ProjectList: React.FC = () => {
@@ -9,17 +16,16 @@ const ProjectList: React.FC = () => {
     <List>
       {projects.map((project) => (
         <Paper
-          elevation={1}
           key={project.id}
+          elevation={1}
           sx={{
-            height: "100%",
             width: "100%",
+            marginBottom: 2,
           }}
         >
           <ListItem
             onClick={() => toggleProjectSelection(project.id)}
             style={{
-              margin: 8,
               cursor: project.state === "Finished" ? "not-allowed" : "pointer",
               backgroundColor: selectedProjects.includes(project.id)
                 ? "lightblue"
@@ -36,24 +42,25 @@ const ProjectList: React.FC = () => {
               flexDirection: "column",
               justifyContent: "space-between",
               alignItems: "center",
-              height: "100px",
-              padding: "16px",
+              height: "75px",
+              padding: "0",
             }}
           >
-            <ListItemText
-              primary={project.name}
-              secondary={project.state}
-              primaryTypographyProps={{
-                fontWeight: "bold",
+            <Box
+              sx={{
+                flexGrow: 1,
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "space-between",
+                width: "100%",
                 textAlign: "center",
-                alignSelf: "flex-start",
               }}
-              secondaryTypographyProps={{
-                textAlign: "center",
-                alignSelf: "flex-end",
-                marginTop: "auto",
-              }}
-            />
+            >
+              <Typography variant="body1" sx={{ fontWeight: "bold" }}>
+                {project.name}
+              </Typography>
+              <Typography variant="body2">{project.state}</Typography>
+            </Box>
           </ListItem>
         </Paper>
       ))}
