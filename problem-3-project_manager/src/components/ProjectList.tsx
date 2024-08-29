@@ -21,7 +21,7 @@ const ProjectList: React.FC = () => {
             style={{
               cursor: project.state === "Finished" ? "not-allowed" : "pointer",
               backgroundColor: selectedProjects.includes(project.id)
-                ? "lightblue"
+                ? "darkblue"
                 : "white",
               color: selectedProjects.includes(project.id) ? "white" : "black",
               borderRight: `25px solid ${
