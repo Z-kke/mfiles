@@ -10,10 +10,10 @@ interface ProjectContextType {
 }
 
 const initialData: Project[] = [
-  { id: 1, name: "Project A", state: "Not Started" },
-  { id: 2, name: "Project B", state: "Not Started" },
-  { id: 3, name: "Project C", state: "Launched" },
-  { id: 4, name: "Project D", state: "Finished" },
+  { id: 1, name: "Travel to Mars", state: "Launched" },
+  { id: 2, name: "Launching satellite", state: "Finished" },
+  { id: 3, name: "Study: growing plants on Mars", state: "Not Started" },
+  { id: 4, name: "Study: new human generation on Mars", state: "Not Started" },
 ];
 
 const ProjectContext = createContext<ProjectContextType | undefined>(undefined);
