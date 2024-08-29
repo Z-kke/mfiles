@@ -10,13 +10,13 @@ const ProjectList: React.FC = () => {
       {projects.map((project) => (
         <Paper
           elevation={1}
+          key={project.id}
           sx={{
             height: "100%",
             width: "100%",
           }}
         >
           <ListItem
-            key={project.id}
             onClick={() => toggleProjectSelection(project.id)}
             style={{
               margin: 8,
