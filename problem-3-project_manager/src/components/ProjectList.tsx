@@ -1,12 +1,5 @@
 import React from "react";
-import {
-  List,
-  ListItem,
-  ListItemText,
-  Paper,
-  Typography,
-  Box,
-} from "@mui/material";
+import { List, ListItem, Paper, Typography, Box } from "@mui/material";
 import { useProjects } from "../context/ProjectContext";
 
 const ProjectList: React.FC = () => {
