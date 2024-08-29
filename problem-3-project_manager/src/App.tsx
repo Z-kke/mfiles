@@ -5,7 +5,6 @@ import ControlPanel from "./components/ControlPanel";
 import { ProjectProvider } from "./context/ProjectContext";
 
 // TODO: Change background color to blue on hover if selectable.
-// TODO: Make the mock data the same as in the assignment.
 
 const App: React.FC = () => {
   return (
